@@ -1,5 +1,5 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :term, class: Wordpress::Term do
-    name "Foobar"
+    name { "Foobar" }
   end
 end
