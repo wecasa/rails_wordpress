@@ -6,7 +6,7 @@ SimpleCov.start
 require File.expand_path("../dummy/config/environment.rb", __FILE__)
 require 'rspec/rails'
 require 'rspec/its'
-require 'factory_girl'
+require 'factory_bot'
 
 Rails.backtrace_cleaner.remove_silencers!
 

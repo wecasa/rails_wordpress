@@ -32,7 +32,7 @@ module Wordpress
       let(:params) { { post_content: new_content } }
 
       subject do 
-        post.update_attributes(post_date: Date.civil(2009,1,1), post_modified: Date.civil(2010,1,1))
+        post.update(post_date: Date.civil(2009,1,1), post_modified: Date.civil(2010,1,1))
         new_revision.save
         post.new_revision({ post_excerpt: "ANOTHER" }).save
         post.reload
@@ -56,7 +56,7 @@ module Wordpress
       end
 
       it "should update the post_modified date" do
-        post.update_attributes(post_date: Date.civil(2009,1,1), post_modified: Date.civil(2010,1,1))
+        post.update(post_date: Date.civil(2009,1,1), post_modified: Date.civil(2010,1,1))
         post.reload
         expect(post.created_at.year).to eq 2009
         expect(post.updated_at.year).to eq 2010
@@ -72,7 +72,7 @@ module Wordpress
 
       describe "latest_revision" do 
         subject do 
-          post.update_attributes(post_date: Date.civil(2009,1,1), post_modified: Date.civil(2010,1,1))
+          post.update(post_date: Date.civil(2009,1,1), post_modified: Date.civil(2010,1,1))
           new_revision.save 
           post 
         end

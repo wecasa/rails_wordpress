@@ -5,9 +5,9 @@ require 'spec_helper'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.before(:suite) do
-    # FactoryGirl.lint
+    # FactoryBot.lint
   end
   
   config.use_transactional_fixtures = false
